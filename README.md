@@ -17,7 +17,7 @@ The TD Postman collections will work on any operating system that Postman suppor
 You can find instructions on obtaining a TD API key here:
     https://docs.treasuredata.com/display/PD/Getting+Your+API+Keys
 
-After you have your API key, and the corresponding consolse URL, configure the Postman variables `{{ApiKeyAuth}}` and `{{baseUrl}}`. 
+After you have your API key, and the corresponding console URL, configure the Postman variables `{{ApiKeyAuth}}` and `{{baseUrl}}`. 
 
 
  ## Downloading a TD API Postman Collection and Global Variables File
