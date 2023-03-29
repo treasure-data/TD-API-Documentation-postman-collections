@@ -20,7 +20,7 @@ You can find instructions on obtaining a TD API key here:
 After you have your API key, and the corresponding console URL, configure the Postman variables `{{ApiKeyAuth}}` and `{{baseUrl}}`. 
 
 
- ## Downloading a TD API Postman Collection and Global Variables File
+ ## Downloading a TD API Postman Collection
  Publicly available TD API Postman collections can be accessed in the Treasure Data [postman-collections](https://github.com/treasure-data/TD-API-Documentation-postman-collections) github repository.
 
 

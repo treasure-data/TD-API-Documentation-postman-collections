@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "968d95f1-ed7b-41f8-92b1-664eb978c08e",
+		"name": "Bulk Data Import 2023-03-06",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create database",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/database/create/{{newDatabaseName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"database",
+						"create",
+						"{{newDatabaseName}}"
+					]
+				},
+				"description": "Creates a database."
+			},
+			"response": []
+		},
+		{
+			"name": "Get database",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/database/show/{{newDatabaseName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"database",
+						"show",
+						"{{newDatabaseName}}"
+					]
+				},
+				"description": "Retrieves a specified database."
+			},
+			"response": []
+		},
+		{
+			"name": "Create table",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/table/create/{{newDatabaseName}}/{{newTableName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"table",
+						"create",
+						"{{newDatabaseName}}",
+						"{{newTableName}}"
+					]
+				},
+				"description": "Creates a table."
+			},
+			"response": []
+		},
+		{
+			"name": "Get tables",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/table/show/{{newDatabaseName}}/{{newTableName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"table",
+						"show",
+						"{{newDatabaseName}}",
+						"{{newTableName}}"
+					]
+				},
+				"description": "Shows a table according to specified database and table."
+			},
+			"response": []
+		},
+		{
+			"name": "Create bulk import session",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseUrl}}/bulk_import/create/{{bulkImportSessionName}}/{{newDatabaseName}}/{{newTableName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk_import",
+						"create",
+						"{{bulkImportSessionName}}",
+						"{{newDatabaseName}}",
+						"{{newTableName}}"
+					]
+				},
+				"description": "Shows a table according to specified database and table."
+			},
+			"response": []
+		},
+		{
+			"name": "Upload MessagePack file",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": "sample.msgpack.gz"
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/bulk_import/upload_part/{{bulkImportSessionName}}/part1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk_import",
+						"upload_part",
+						"{{bulkImportSessionName}}",
+						"part1"
+					]
+				},
+				"description": "Shows a table according to specified database and table."
+			},
+			"response": []
+		},
+		{
+			"name": "Create job to perform bulk import",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseUrl}}/bulk_import/perform/{{bulkImportSessionName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk_import",
+						"perform",
+						"{{bulkImportSessionName}}"
+					]
+				},
+				"description": "Shows a table according to specified database and table."
+			},
+			"response": []
+		},
+		{
+			"name": "Get status bulk import",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseUrl}}/bulk_import/show/{{sessionName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk_import",
+						"show",
+						"{{sessionName}}"
+					]
+				},
+				"description": "Shows a table according to specified database and table."
+			},
+			"response": []
+		},
+		{
+			"name": "Commit bulk import job",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "{{baseUrl}}/bulk_import/commit/{{bulkImportSessionName}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"bulk_import",
+						"commit",
+						"{{bulkImportSessionName}}"
+					]
+				},
+				"description": "Shows a table according to specified database and table."
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{ApiKeyAuth}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://api.treasuredata.com/v3",
+			"type": "string"
+		},
+		{
+			"key": "ApiKeyAuth",
+			"value": "TD1 1/123456789abcdef0123456789abcdef012345678",
+			"type": "default"
+		},
+		{
+			"key": "newDatabaseName",
+			"value": "my_bulk_load_db",
+			"type": "default"
+		},
+		{
+			"key": "newTableName",
+			"value": "my_bulk_load_table",
+			"type": "default"
+		},
+		{
+			"key": "bulkImportSessionName",
+			"value": "my_bulk_load_session",
+			"type": "default"
+		}
+	]
+}
