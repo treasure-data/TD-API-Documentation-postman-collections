@@ -2,7 +2,7 @@
 
 Treasure Data has created Postman collections for developers who are interested in quickly exercising Treasure Data APIs. Current collections include:
 
--   Bulk Import Tutorial
+-   [Bulk Import Tutorial](https://github.com/treasure-data/TD-API-Documentation-postman-collections/blob/main/td-api/bulk-import-tutorial/README.md#postman-collection-for-bulk-import-tutorial)
 
 
 To use these collections you will need to do the following:
