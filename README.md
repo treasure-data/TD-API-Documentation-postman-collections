@@ -1,6 +1,11 @@
 # Treasure Data Postman Collections for APIs
 
-Treasure Data will be creating Postman collections for developers who are interested in quickly exercising Treasure Data APIs. To use these collections you will need to do the following:
+Treasure Data has created Postman collections for developers who are interested in quickly exercising Treasure Data APIs. Current collections include:
+
+-   Bulk Import Tutorial
+
+
+To use these collections you will need to do the following:
 -   Download and install Postman on your local computer
 -   Obtain a valid TD API Key for your API endpoints
 -   Download an API-specific Postman collection file (`•••••••.postman_collection.json`)
