@@ -1,0 +1,289 @@
+{
+	"info": {
+		"_postman_id": "956988ba-08fc-4975-816d-d8ca5bfaf5e2",
+		"name": "Live Connect API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19840828"
+	},
+	"item": [
+		{
+			"name": "List all DWH Integrations for the current user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a new DWH Integration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"dwh_test0001\",\n    \"timezone\": \"UTC\",\n    \"basic_configs\": {\n        \"type\": \"snowflake\",\n        \"warehouse\": \"DEMO_WH\",\n        \"db\": \"SNOWFLAKE_SAMPLE_DATA\",\n        \"schema\": \"TPCH_SF1\",\n        \"incremental\": false,\n        \"source_type\": \"table_view\",\n        \"td_authentication_id\": {{tdAuthenicationId}}\n    },\n    \"advanced_configs\": [\n        // {\n        //     \"target_table\": \"CUSTOMER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"CUSTOMER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JCUSTOMER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JCUSTOMER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JLINEITEM\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JLINEITEM\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JNATION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JNATION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JORDERS\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JORDERS\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JPART\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JPART\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JPARTSUPP\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JPARTSUPP\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JREGION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JREGION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JSUPPLIER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JSUPPLIER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"LINEITEM\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"LINEITEM\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"NATION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"NATION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"ORDERS\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"ORDERS\"\n        //     }\n        // },\n        {\n            \"target_table\": \"PART\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"PART\"\n            }\n        },\n        {\n            \"target_table\": \"PARTSUPP\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"PARTSUPP\"\n            }\n        },\n        {\n            \"target_table\": \"REGION\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"REGION\"\n            }\n        },\n        {\n            \"target_table\": \"SUPPLIER\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"SUPPLIER\"\n            }\n        }\n    ],\n    \"filter_configs\": [\n        {\n            \"from_value\": {\n                \"mode\": \"upload_time\"\n            },\n            \"to_column\": {\n                \"name\": \"time\"\n            },\n            \"type\": \"add_time\"\n        }\n    ],\n    \"out_configs\": {\n        \"database\": \"dwh_test\",\n        \"mode\": \"replace\",\n        \"time_column\": \"time\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a DWH Integration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhIntegrationId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh",
+						"{{dwhIntegrationId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a DWH Integration",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    // \"name\": \"dwh_test0001\",\n    \"timezone\": \"UTC\",\n    \"basic_configs\": {\n        \"type\": \"snowflake\",\n        \"warehouse\": \"DEMO_WH\",\n        \"db\": \"SNOWFLAKE_SAMPLE_DATA\",\n        \"schema\": \"TPCH_SF1\",\n        \"incremental\": false,\n        \"source_type\": \"table_view\",\n        \"td_authentication_id\": {{tdAuthenicationId}}\n    },\n    \"advanced_configs\": [\n        // {\n        //     \"target_table\": \"CUSTOMER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"CUSTOMER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JCUSTOMER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JCUSTOMER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JLINEITEM\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JLINEITEM\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JNATION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JNATION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JORDERS\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JORDERS\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JPART\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JPART\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JPARTSUPP\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JPARTSUPP\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JREGION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JREGION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JSUPPLIER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JSUPPLIER\"\n        //     }\n        // },\n        {\n            \"target_table\": \"LINEITEM\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"LINEITEM\"\n            }\n        },\n        {\n            \"target_table\": \"NATION\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"NATION\"\n            }\n        },\n        {\n            \"target_table\": \"ORDERS\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"ORDERS\"\n            }\n        },\n        {\n            \"target_table\": \"PART\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"PART\"\n            }\n        },\n        {\n            \"target_table\": \"PARTSUPP\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"PARTSUPP\"\n            }\n        },\n        {\n            \"target_table\": \"REGION\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"REGION\"\n            }\n        },\n        {\n            \"target_table\": \"SUPPLIER\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"SUPPLIER\"\n            }\n        }\n    ],\n    \"filter_configs\": [\n        {\n            \"from_value\": {\n                \"mode\": \"upload_time\"\n            },\n            \"to_column\": {\n                \"name\": \"time\"\n            },\n            \"type\": \"add_time\"\n        }\n    ],\n    \"out_configs\": {\n        \"database\": \"dwh_test\",\n        \"mode\": \"replace\",\n        \"time_column\": \"time\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh/{{configId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh",
+						"{{configId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a DWH Integration",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh",
+						"{{dwhId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all Bulkload sessions of the current DWH Integration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhIntegrationId}}/bulkload_sessions",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh",
+						"{{dwhIntegrationId}}",
+						"bulkload_sessions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a DWH Integration configuration",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh/{{configId}}",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh",
+						"{{configId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Trigger run the DWH Integration workflow",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh/{{configId}}/run_workflow",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh",
+						"{{configId}}",
+						"run_workflow"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List all DWH Workflow session attempts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/v1/dwh/{{configId}}/session_attempts",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"dwh",
+						"{{configId}}",
+						"session_attempts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guess DWH Integration configuration",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"basic_configs\": {\n    \"type\": \"snowflake\",\n    \"td_authentication_id\": {{tdAuthenicationId}},\n    \"warehouse\": \"DEMO_WH\",\n    \"db\": \"SNOWFLAKE_SAMPLE_DATA\",\n    \"schema\": \"TPCH_SF1\",\n    \"incremental\": false\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/v1/guess",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"v1",
+						"guess"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "value",
+				"value": "{{ApiKeyAuth}}",
+				"type": "string"
+			},
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://dwh-integration-api.treasuredata.com",
+			"type": "string"
+		},
+		{
+			"key": "ApiKeyAuth",
+			"value": "TD1 1/123456789abc••••••••••••••••••••••••••••",
+			"type": "string"
+		},
+		{
+			"key": "bulkLoadSessionId",
+			"value": "0",
+			"type": "string"
+		},
+		{
+			"key": "tdAuthenicationId",
+			"value": "0",
+			"type": "string"
+		},
+		{
+			"key": "dwhIntegrationName",
+			"value": "dwh_test0001",
+			"type": "string"
+		}
+	]
+}
