@@ -3,6 +3,7 @@
 Treasure Data has created Postman collections for developers who are interested in quickly exercising Treasure Data APIs. Current collections include:
 
 -   [Bulk Import Tutorial](https://github.com/treasure-data/TD-API-Documentation-postman-collections/blob/main/td-api/bulk-import-tutorial/README.md#postman-collection-for-bulk-import-tutorial)
+-   [Live Connect API](https://github.com/treasure-data/TD-API-Documentation-postman-collections/blob/main/td-api/bulk-import-tutorial/README.md#postman-collection-for-bulk-import-tutorial)
 
 
 To use these collections you will need to do the following:
@@ -39,14 +40,14 @@ Configuring TD API Collections requires the following steps:
 To configure Postman with a TD API collection:
 
 1. On your local machine, open the Postman application.
-1. In the Scratch Pad row, select **Import**.
-1. Select **Upload Files**.
-1. Select the `•••••••.postman_collection.json` file that you want to use and then select **Open**.
-1. Select **Import**.
-1. Select the newly imported collection.
-1. In the local collection pane, select the **Variables** tab.
+1. In the upper-left corner, in the My Workspace area, select **Import**.
+1. Select the TD Postman collection you want to import.<br>
+    The collection will display as a new collection.
+1. Select the "View more actions" option ( ... ) for the new collection and select **Edit**.
+1. Select the **Variables** tab.
 1. In the Current Value column for the {{baseUrl}} variable enter the API endpoint you want to use.
 1. In the Current Value column for the {{ApiKeyAuth}} variable enter the TD API key that corresponds to your endpoint.
-1. Select **Save**.
+1. Select **Save**.<br>
+    Some of the variables defined for the collection may be empty or set to 0. In these cases, you may first need to run a "Create" or a "Get" API in order to get the ID or value to enter into the Current Value column.
 
 From the navigation pane, you can now select the individual API you want to exercise. Refer to the [TD API portal](https://api-docs.treasuredata.com/) for instructions on how to exercise specific collections.
