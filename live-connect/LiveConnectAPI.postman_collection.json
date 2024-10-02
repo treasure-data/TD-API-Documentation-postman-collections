@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "956988ba-08fc-4975-816d-d8ca5bfaf5e2",
+		"_postman_id": "122e30e4-6b7a-461e-b8e9-3693b76bc1de",
 		"name": "Live Connect API",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "19840828"
@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"name\": \"dwh_test0001\",\n    \"timezone\": \"UTC\",\n    \"basic_configs\": {\n        \"type\": \"snowflake\",\n        \"warehouse\": \"DEMO_WH\",\n        \"db\": \"SNOWFLAKE_SAMPLE_DATA\",\n        \"schema\": \"TPCH_SF1\",\n        \"incremental\": false,\n        \"source_type\": \"table_view\",\n        \"td_authentication_id\": {{tdAuthenicationId}}\n    },\n    \"advanced_configs\": [\n        // {\n        //     \"target_table\": \"CUSTOMER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"CUSTOMER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JCUSTOMER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JCUSTOMER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JLINEITEM\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JLINEITEM\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JNATION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JNATION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JORDERS\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JORDERS\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JPART\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JPART\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JPARTSUPP\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JPARTSUPP\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JREGION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JREGION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JSUPPLIER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JSUPPLIER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"LINEITEM\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"LINEITEM\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"NATION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"NATION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"ORDERS\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"ORDERS\"\n        //     }\n        // },\n        {\n            \"target_table\": \"PART\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"PART\"\n            }\n        },\n        {\n            \"target_table\": \"PARTSUPP\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"PARTSUPP\"\n            }\n        },\n        {\n            \"target_table\": \"REGION\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"REGION\"\n            }\n        },\n        {\n            \"target_table\": \"SUPPLIER\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"SUPPLIER\"\n            }\n        }\n    ],\n    \"filter_configs\": [\n        {\n            \"from_value\": {\n                \"mode\": \"upload_time\"\n            },\n            \"to_column\": {\n                \"name\": \"time\"\n            },\n            \"type\": \"add_time\"\n        }\n    ],\n    \"out_configs\": {\n        \"database\": \"dwh_test\",\n        \"mode\": \"replace\",\n        \"time_column\": \"time\"\n    }\n}",
+					"raw": "{\n    \"name\": \"{{dwhIntegrationName}}\",\n    \"timezone\": \"UTC\",\n    \"basic_configs\": {\n        \"type\": \"snowflake\",\n        \"warehouse\": \"DEMO_WH\",\n        \"db\": \"SNOWFLAKE_SAMPLE_DATA\",\n        \"schema\": \"TPCH_SF1\",\n        \"incremental\": false,\n        \"source_type\": \"table_view\",\n        \"td_authentication_id\": {{tdAuthenicationId}}\n    },\n    \"advanced_configs\": [\n        // {\n        //     \"target_table\": \"CUSTOMER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"CUSTOMER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JCUSTOMER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JCUSTOMER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JLINEITEM\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JLINEITEM\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JNATION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JNATION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JORDERS\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JORDERS\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JPART\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JPART\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JPARTSUPP\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JPARTSUPP\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JREGION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JREGION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"JSUPPLIER\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"JSUPPLIER\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"LINEITEM\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"LINEITEM\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"NATION\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"NATION\"\n        //     }\n        // },\n        // {\n        //     \"target_table\": \"ORDERS\",\n        //     \"config\": {\n        //         \"select\": \"*\",\n        //         \"table\": \"ORDERS\"\n        //     }\n        // },\n        {\n            \"target_table\": \"PART\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"PART\"\n            }\n        },\n        {\n            \"target_table\": \"PARTSUPP\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"PARTSUPP\"\n            }\n        },\n        {\n            \"target_table\": \"REGION\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"REGION\"\n            }\n        },\n        {\n            \"target_table\": \"SUPPLIER\",\n            \"config\": {\n                \"select\": \"*\",\n                \"table\": \"SUPPLIER\"\n            }\n        }\n    ],\n    \"filter_configs\": [\n        {\n            \"from_value\": {\n                \"mode\": \"upload_time\"\n            },\n            \"to_column\": {\n                \"name\": \"time\"\n            },\n            \"type\": \"add_time\"\n        }\n    ],\n    \"out_configs\": {\n        \"database\": \"dwh_test\",\n        \"mode\": \"replace\",\n        \"time_column\": \"time\"\n    }\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -57,14 +57,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/v1/dwh/{{dwhIntegrationId}}",
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"v1",
 						"dwh",
-						"{{dwhIntegrationId}}"
+						"{{dwhId}}"
 					]
 				}
 			},
@@ -85,14 +85,14 @@
 					}
 				},
 				"url": {
-					"raw": "{{baseUrl}}/v1/dwh/{{configId}}",
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"v1",
 						"dwh",
-						"{{configId}}"
+						"{{dwhId}}"
 					]
 				}
 			},
@@ -123,14 +123,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/v1/dwh/{{dwhIntegrationId}}/bulkload_sessions",
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhId}}/bulkload_sessions",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"v1",
 						"dwh",
-						"{{dwhIntegrationId}}",
+						"{{dwhId}}",
 						"bulkload_sessions"
 					]
 				}
@@ -143,14 +143,15 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/v1/dwh/{{configId}}",
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhId}}/configs",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"v1",
 						"dwh",
-						"{{configId}}"
+						"{{dwhId}}",
+						"configs"
 					]
 				}
 			},
@@ -162,15 +163,14 @@
 				"method": "PUT",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/v1/dwh/{{configId}}/run_workflow",
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhId}}",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"v1",
 						"dwh",
-						"{{configId}}",
-						"run_workflow"
+						"{{dwhId}}"
 					]
 				}
 			},
@@ -182,14 +182,14 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{baseUrl}}/v1/dwh/{{configId}}/session_attempts",
+					"raw": "{{baseUrl}}/v1/dwh/{{dwhId}}/session_attempts",
 					"host": [
 						"{{baseUrl}}"
 					],
 					"path": [
 						"v1",
 						"dwh",
-						"{{configId}}",
+						"{{dwhId}}",
 						"session_attempts"
 					]
 				}
@@ -268,6 +268,11 @@
 		{
 			"key": "ApiKeyAuth",
 			"value": "TD1 1/123456789abc••••••••••••••••••••••••••••",
+			"type": "string"
+		},
+		{
+			"key": "dwhId",
+			"value": "0",
 			"type": "string"
 		},
 		{
